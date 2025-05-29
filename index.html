@@ -1,0 +1,107 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sircle's kitchen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="sircles kitchen" />
+    <style>
+      body {
+        text-align: center;
+        font-family: sans-serif;
+        background: linear-gradient(#abcabc, #cbacba);
+        background-size: cover;
+        background-attachment: fixed;
+        padding:0;margin:0;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        min-height:100vh;
+      }
+      #directory {
+        display: flex;
+        width:100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        flex:0 1 auto;
+      }
+      #directory div {
+        flex:1 0 auto;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid white;
+      }
+      #directory a {
+        display: block;
+      }
+      #sophie {
+        background-color: #babeee;
+      }
+      #rocky {
+        background-color: #baddad;
+      }
+      #example {
+        background-color: #daddee;
+      }
+      #preview {
+        width:100%;
+        border:0;
+        flex:1 1 auto;
+      }
+      h1, p{
+        padding:0;margin:0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="directory">
+<!--    copy this box and replace id for your own box    -->
+      <div id="example">
+        <h1>sircle's kitchen</h1>
+        <p>
+          this is the group-code project
+          <br />for a <b>sircle of phriends.</b>
+          <br /><br />
+          for public access, <br>please ping sophie on discord:
+        <a href="https://discordapp.com/users/830600211852296192">phi#4450</a>.
+        </p>
+      </div>
+
+      <div id="sophie">
+        <a href="/sophie">
+        <h1>sophie</h1></a>
+        <p>
+          i have too many experiments <br>
+          visit the index above to see them
+        </p>
+      </div>
+      <div id="rocky">
+        <h1>rocky</h1>
+        <a href="/rocky">door to everything<br /></a>
+        <a href="/rocky/outfit.html">rocky fit demo<br /></a>
+      </div>
+    </div>
+<!-- this is a preview frame. glitch's editor always takes you to index so if you change this you don't have to navigate away every time. also works as a fun showcase!  -->
+    <script>
+    function go_iframe(){
+      document.getElementById('preview').src=
+        document.getElementById('previewinput').value
+    }
+      function iframe_back(){
+document.getElementById('preview').contentWindow.history.back(); 
+      }
+      function iframe_forward(){
+document.getElementById('preview').contentWindow.history.forward(); 
+      }
+    </script>
+    <p>
+    <button onclick="iframe_back()"><-</button>
+    <button onclick="iframe_forward()">-></button>
+      now previewing: <input id="previewinput" value="/sophie/clocks"/><button onclick="go_iframe()">go</button></p>
+    <iframe id="preview" src="/sophie/clocks"></iframe>
+  </body>
+</html>
