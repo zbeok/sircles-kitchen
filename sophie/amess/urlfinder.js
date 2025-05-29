@@ -1,0 +1,92 @@
+var names = `zbeok
+snerkflerks
+jinkitsuragi
+poissondamage
+thetomska
+wormzone
+slimgiltsoul
+theoplum
+zlo-sovs-lifeboat
+spect-ion
+energylines
+loveletter2you
+quasarkisses
+play-now-my-lord
+hellenhighwater
+elfgirlcraftworks
+mansand
+wiltkingart
+fursonja222
+shevvys-pictures
+kurapiqa
+grand-theft-carbohydrates
+sajanrai
+fellty
+cali
+sapphling
+divorceojisan
+kewpiekills
+bobacupcake
+doorfanatic
+decamarks
+plaest2k
+marinebiologyshitposts
+jeromepowell
+g-oblincat
+maximumgraves
+ranchuppi
+imperialgrunt
+seaps
+markscherz
+nightpool
+boxheadpaint
+jinkitsuragi
+venus-as-a-birl
+ot3
+hatingongodot
+vrrue
+girls--complex
+loumafox
+averyterrible
+romanceyourdemons
+yyarrow
+utopians
+tomscholes
+zkyeline
+deadbodyrave
+cowboy
+callisteios
+alex-grows-pomegranates
+peatbogdyke
+nyancrimew
+nostalgebraist
+ecoamerica
+homikot
+soracities
+beefcliff
+symbolishplant
+twocubes
+youraveragejoke
+davidfosterwallaceandgromit
+showerwhoops
+urkuri
+mousy-maja
+vats9underscore9
+anonymousalchemist
+yimmypee
+frecklepeckle
+2001starmen
+hahnsplatinum
+saint-vagrant
+seafortskua
+wattse
+`
+async function check(){
+  for (var i in names) {
+    const response = await fetch( "https://cohost.org/"+names[i],{
+       header: {
+       "Content-Type": "application/x-www-form-urlencoded"
+   }})
+    return;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sophie's domain</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0"
+    />
+    <meta name="description" content="sophie's domain" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js
+"></script>
+    <script src="/sophie/modules/dawn.js"></script>
+    <script src="/sophie/clocks/clock.js"></script>
+    <script src="/sophie/clocks/temporal.js"></script>
+    <script src="/sophie/clocks/nine.js"></script>
+    <script src="/sophie/modules/plant.js"></script>
+    <script src="/sophie/modules/scene.js"></script>
+    <script>
+      function choose_clock() {
+        var dropdown = document.getElementById("clocks-dropdown");
+        switch (dropdown.value) {
+          case "temporal":
+            document.getElementById("clock").className = "temporal-clock";
+            TemporalClock.refresh_clocks();
+            break;
+          case "nine":
+            document.getElementById("clock").className = "nine-clock";
+            NineClock.refresh_clocks();
+            break;
+          default:
+            // "normal"
+            document.getElementById("clock").className = "normal-clock";
+            Clock.refresh_clocks();
+        }
+      }
+    </script>
+    <noscript>
+      no javascript huh? i like the cut of your gib. this thing runs on
+      javascript tho, sorry!
+    </noscript>
+    <link rel="stylesheet" href="/sophie/clocks/style.css" />
+  </head>
+  <body>
+    <!--  accessibility version :
+images (alt text) 
+color contrast and colorblindness. 
+text can be made largeest without ugly. 
+links describable and if doc, what type. 
+make sure is navable without mouse (tabs) 
+if form imput, easy to see labels. -->
+    <div class="bg dawnify"></div>
+    <div class="content">
+    <div id="title" class="display">
+      <p>brynnian clocks</p>
+      <h1 class="normal-clock" id="clock"></h1>
+      <p>pick your clock</p>
+      <select
+        name="clocks"
+        id="clocks-dropdown"
+        selected="normal"
+        onchange="choose_clock()"
+      >
+        <option value="normal">24 hour linear clock</option>
+        <option value="temporal">temporal clock</option>
+        <option value="nine">nine clock</option>
+      </select>
+      <p>note: location is sourced from ip locally.<br/> no data is stored. </p>
+    </div>
+    </div>
+  </body>
+</html>

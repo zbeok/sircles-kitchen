@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Media</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="photogallery.js">
+    /***********************************************
+    * Photo Gallery Script v2.0- (c) Dynamic Drive (www.dynamicdrive.com)
+    * Please keep this notice intact.
+    * Visit http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+    </script>
+
+    <style type="text/css">
+    .photogallery{ /*CSS for TABLE containing a photo album*/
+    }
+    .photogallery img{ /*CSS for images within an album*/
+    border: 1px solid green;
+    }
+    .photonavlinks{ /*CSS for pagination DIV*/
+    font: bold 14px Arial;
+    }
+    .photonavlinks a{ /*CSS for each navigational link*/
+    margin-right: 2px;
+    margin-bottom: 3px;
+    padding: 1px 5px;
+    border:1px solid gray;
+    text-decoration: none;
+    background-color: white;
+    }
+    .photonavlinks a.current{ /*CSS for currently selected navigational link*/
+    background-color: yellow;
+    }
+</style>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //Define your own array to hold the photo album images
+    //Syntax: ["path_to_thumbnail", "opt_image_title", "opt_destinationurl", "opt_linktarget"]
+    var myvacation=new Array()
+    myvacation[0]=["../photo1.jpg", "", "photo1-large.jpg"]
+    myvacation[1]=["photo2.jpg", "Our car", ""]
+    myvacation[2]=["photo3.jpg", "Our dog", "photo3-large.jpg"]
+    myvacation[3]=["photo4.jpg", "Our hotel", "http://www.gohawaii.com/"]
+    myvacation[4]=["photo5.jpg", "Our Computer", "http://www.google.com", "_new"]
+    myvacation[5]=["photo6.jpg", "Our house", "photo6-large.jpg"]
+    myvacation[6]=["photo7.jpg", "Our Friends", "http://www.ask.com"]
+    //initiate a photo gallery
+    //Syntax: new photogallery(imagearray, cols, rows, tablewidth, tableheight, opt_[paginatetext_prefix, paginatetext_linkprefix])
+    var thepics=new photogallery(myvacation, 3, 1, '700px', '600px')
+    //OPTIONAL: Run custom code when an image is clicked on, via "onselectphoto"
+    //DELETE everything below to disable
+    //Syntax: function(img, link){}, whereby img points to the image object of the image, and link, its link object, if defined
+    thepics.onselectphoto=function(img, link){
+    if (link!=null) //if this image is hyperlinked
+    window.open(link.href, "", "width=800, height=600, status=1, resizable=1")
+    return false //cancel default action when clicking on image, by returning false instead of true
+    }
+
+    </script>
+  </body>
+</html>

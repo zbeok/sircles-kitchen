@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>moire test</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0"
+    />
+    <link rel="stylesheet" href="/sophie/style.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        
+        var containers = document.getElementsByClassName("container");
+        for (var i in containers) {
+          containers[i].innerHTML = "<hr>".repeat(containers[i].offsetHeight/4);
+        }
+      });
+    </script>
+    <style>
+      body {
+        margin:0;padding:0;
+      }
+      hr, h1 {
+        margin:0;padding:0;
+        color:black;
+      }
+      h1 {
+      }
+      .container > hr {
+        padding-bottom:1px;
+        border: 2px solid black;
+      }
+      .passive{
+        width:100%;
+        height:100%;
+        position:fixed;
+        text-align:center;
+        top:0;
+        z-index:-1;
+      }
+      .active{
+        width:100%;
+        height:100%;
+        position:absolute;
+      }
+      #laura {
+        width:100%;padding:0;margin:0;
+        display:block;
+        background: url("https://64.media.tumblr.com/21ee85ef73f1f154f753adc35a4da7ba/6fa3e62c0d7b39f1-88/s1280x1920/6719737525d3de9a697c0699eb9690e4a39b140f.jpg");
+        background-size:240px 6px;
+        background-repeat:repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="passive" id="laura"></div>
+    <div class="active container"></div>
+<!--     <div class="passive container"></div> -->
+  </body>
+</html>
