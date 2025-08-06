@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>sophie's domain</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0" />
-    <meta name="description" content="sophie's domain" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js
+
+<head>
+  <title>sophie's domain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0" />
+  <meta name="description" content="sophie's domain" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js
 "></script>
-<!--     <script src="/sophie/pretty/dawn.js"></script>
+  <!--     <script src="/sophie/pretty/dawn.js"></script>
     <script src="/sophie/pretty/plant.js"></script>
     <script src="/sophie/pretty/sketch.js"></script> -->
-    <script src="/sophie/anagram/sketch.js"></script>
-    <style>
-      #menu{
-        position:fixed;
-        top:0;left:0;right:0;
-        display:flex;
-        flex-direction:row;
-        justify-content: center;
-        align-items: center;
-        gap:5px;
-        padding:5px;
-      }
-      #menu > input {
-        flex-grow:3;        
-      }
-      #anagram{
-        z-index:100000;
-      }
-      main{
-        position:fixed;
-        top:0;left:0;
-      }
-      html,
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-    </style>
-  </head>
-  <body>
-    <!--  accessibility version :
+  <script src="anagram.js"></script>
+  <style>
+    #menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 5px;
+    }
+
+    #menu>input {
+      flex-grow: 3;
+    }
+
+    #anagram {
+      z-index: 100000;
+    }
+
+    main {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <!--  accessibility version :
 images (alt text) 
 color contrast and colorblindness. 
 text can be made largeest without ugly. 
 links describable and if doc, what type. 
 make sure is navable without mouse (tabs) 
 if form imput, easy to see labels. -->
-    <div id="menu">
-      <input id="before" value="graphic design is my passion"/>
-      <input id="after" value="my ass is poggers pinch in aid"/>
-      <button onclick="main.new_anim()">animate</button>
-    </div>
-    <div id="anagram">
-    </div>
-  </body>
+  <div id="menu">
+    <input id="before" value="graphic design is my passion" />
+    <input id="after" value="my ass is poggers pinch in aid" />
+    <button onclick="main.new_anim()">animate</button>
+  </div>
+  <div id="anagram">
+  </div>
+</body>
+
 </html>

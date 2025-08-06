@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0"
-    />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <meta charset="utf-8" />
-    <style>
-      body {
-        background: clear;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        height:100vh;
-      }
-      /*       body{
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta charset="utf-8" />
+  <style>
+    body {
+      background: clear;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /*       body{
         filter
       } */
-    </style>
-    <script>
-      var bark_noise = new Audio('https://cdn.glitch.global/49760264-2e6b-484d-9841-f4f99284d5a1/wanwan.wav?v=1681258564814');
-      var congrats_noise = new Audio('https://cdn.glitch.global/49760264-2e6b-484d-9841-f4f99284d5a1/nintendogs%20jingle.mp3?v=1705345619870');
-      
-      var sit_src="https://cdn.discordapp.com/attachments/790835695609839627/1095421398874345643/lilyshiba.png";
-      var bark_src="https://cdn.discordapp.com/attachments/790835695609839627/1095496091220324362/lilyshiba.png";
-      console.log("yayyyyy");
-      function bark(){
-        var lily = document.getElementById("lily");
-        lily.src=bark_src;
-        congrats_noise.play();
-        bark_noise.currentTime=0.3;
-        bark_noise.play();
-        setTimeout(()=>{
-          lily.src=sit_src;
-          
-        }, congrats_noise.duration*800)
-      }
-    </script>
-  </head>
-  <body>
-    <div onclick="bark()">
-      
-  <img id="lily" src="https://cdn.discordapp.com/attachments/790835695609839627/1095421398874345643/lilyshiba.png"/>
-    </div>
-  </body>
+  </style>
+  <script>
+    var bark_noise = new Audio('assets/wanwan.wav');
+    var congrats_noise = new Audio('assets/nintendogs jingle.mp3');
+
+    var sit_src = "assets/lilyshiba.png";
+    var bark_src = "assets/lilyshiba-bork.png";
+    console.log("yayyyyy");
+    function bark() {
+      var lily = document.getElementById("lily");
+      lily.src = bark_src;
+      congrats_noise.play();
+      bark_noise.currentTime = 0.3;
+      bark_noise.play();
+      setTimeout(() => {
+        lily.src = sit_src;
+
+      }, congrats_noise.duration * 800)
+    }
+  </script>
+</head>
+
+<body>
+  <div onclick="bark()">
+
+    <img id="lily" src="assets/lilyshiba.png" />
+  </div>
+</body>
+
 </html>

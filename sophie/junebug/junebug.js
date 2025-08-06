@@ -1,16 +1,16 @@
-import PopUp from "/sophie/modules/popup.js";
+import PopUp from "../modules/popup.js";
 
 var congrats_noise = new Audio('https://cdn.glitch.global/49760264-2e6b-484d-9841-f4f99284d5a1/nintendogs%20jingle.mp3?v=1705345619870');
 class JuneBug {
-  constructor(script,popups,sequences) {
+  constructor(script, popups, sequences) {
     this.popup = new PopUp(popups);
     this.popups = popups;
     this.script = script;
     this.sequences = sequences;
     this.history = [];
     this.path = new Path();
-  // TODO
-  // window.location.hash = "new value#something";
+    // TODO
+    // window.location.hash = "new value#something";
     // text1.concat(" ", text2);
     var that = this;
     this.question = $("<h3>", { id: "junebug-question" });
@@ -37,21 +37,21 @@ class JuneBug {
     this.about = $("<button>", { id: "junebug-about" })
       .text("about")
       .click(function () {
-         that.popup.up("about", popups["about"]);
+        that.popup.up("about", popups["about"]);
       });
 
     this.export = $("<button>", { id: "junebug-export" })
       .text("done")
       .click(function () {
-         that.exporting();
+        that.exporting();
       });
-    
+
     this.report = $("<button>", { id: "junebug-report" })
       .text("this didn't help")
       .click(function () {
-         that.popup.up("still feel bad?", popups["report"]);
+        that.popup.up("still feel bad?", popups["report"]);
       });
-    
+
 
     this.nav = $("<div>", { id: "junebug-menu" })
       .append(this.top)
@@ -96,16 +96,16 @@ class JuneBug {
     } else {
       option = document.createElement("a");
       option.onclick = function () {
-        that.path.update(history[history.length-1], text);
-        history[history.length-1] = [history[history.length-1], text];
+        that.path.update(history[history.length - 1], text);
+        history[history.length - 1] = [history[history.length - 1], text];
         if (next in that.script || next in that.sequences) that.render(next);
       };
     }
     option.className = "navbit";
     option.innerHTML = text;
-    if (text.search(/sophie/i)>=0) {
+    if (text.search(/sophie/i) >= 0) {
       option.className += " sophie";
-    } 
+    }
     return option;
   }
   render_sequence(key) {
@@ -117,7 +117,7 @@ class JuneBug {
     var i = 0;
     var that = this;
     this.options.click(function () {
-      if (i<seq.length) {
+      if (i < seq.length) {
         var option = $("<a>", { class: "navbit" }).html(seq[i]);
         that.options.append(option);
         i++;
@@ -129,7 +129,7 @@ class JuneBug {
     });
     return;
   }
-  input_sequence(key,text) {
+  input_sequence(key, text) {
     // var p = document.createElement("p");
     // p.innerHTML = this.sequences[key][text];
     // var input = document.createElement("input");
@@ -142,7 +142,7 @@ class JuneBug {
     for (var i in this.history) {
       var scene = this.history[i];
       if (typeof scene == "string") {
-        if (scene in this.script){
+        if (scene in this.script) {
           res += "<br />" + this.script[scene].q;
         } else if (scene in this.sequences) {
           res += "<br />" + scene;
@@ -159,41 +159,41 @@ class JuneBug {
 }
 
 class Path {
-  constructor(){
+  constructor() {
     this.history = window.location.hash.split("#");
     console.log(this.history)
   }
-  pop(num=1){
+  pop(num = 1) {
     if (this.history.length <= 1) {
       return;
     }
     var scene;
     console.log(this.history)
-    for (var i in num){
+    for (var i in num) {
       scene = this.history.pop();
     }
     var hashstring = this.history[0];
-    for (var i=1;i<this.history.length;i++) {
-      hashstring+="#"+this.history[i];
+    for (var i = 1; i < this.history.length; i++) {
+      hashstring += "#" + this.history[i];
     }
     window.location.hash = hashstring;
-    console.log(hashstring,this.history)
+    console.log(hashstring, this.history)
     return scene;
   }
-  push(key,value=""){
-    this.history.push([key,value])
-    window.location.hash+="#"+key;
+  push(key, value = "") {
+    this.history.push([key, value])
+    window.location.hash += "#" + key;
   }
-  update(key,value=""){
-    this.history[history.length-1] = [key, value];
+  update(key, value = "") {
+    this.history[history.length - 1] = [key, value];
   }
-  export(){
+  export() {
     return this.history;
   }
-  length(){
+  length() {
     return this.history.length();
   }
 }
-export default function (script,popups,sequences) {
-  return new JuneBug(script,popups,sequences)
+export default function (script, popups, sequences) {
+  return new JuneBug(script, popups, sequences)
 }

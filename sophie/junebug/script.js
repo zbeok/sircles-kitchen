@@ -1,4 +1,4 @@
-import JuneBug from "/sophie/junebug/junebug.js";
+import JuneBug from "./junebug.js";
 
 var popups = {
   about: `sophies junebug (adapted from the <a href="https://adhdanalogbrain.blogspot.com/p/introduction-to-analog-brain-sometimes.html?m=1#0-1">analog brain tool</a>) is designed to ask you questions and lead you to a helpful answer (especially to sophie). <br /><br />
@@ -518,5 +518,5 @@ var sequences = {
 // }
 
 window.onload = function () {
-  var junebug = new JuneBug(script,popups,sequences);
+  var junebug = new JuneBug(script, popups, sequences);
 };

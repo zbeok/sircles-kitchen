@@ -6,22 +6,22 @@ var spng;
 var brushSize = 80;
 function setup() {
   let img = createImg(
-    "https://kleensco.com/wp-content/uploads/2021/04/GFG331.png",
+    "../assets/spange.png",
     "spange"
   );
-  img.style("width",brushSize+"px");
+  img.style("width", brushSize + "px");
 
   spng = createDiv();
   img.parent(spng);
-  spng.style("position","fixed");
-  spng.style("pointer-events","none");
-  spng.style("z-index","1000");
+  spng.style("position", "fixed");
+  spng.style("pointer-events", "none");
+  spng.style("z-index", "1000");
   spng.id("cursor");
 
   var canvas = createCanvas(windowWidth, windowHeight);
   canvas.style("mix-blend-mode", "multiply");
   canvas.style("z-index", "10");
-  canvas.style("pointer-events","none");
+  canvas.style("pointer-events", "none");
   canvas.style("position", "fixed");
   canvas.parent(document.body);
   background(255, 255, 255, 0);

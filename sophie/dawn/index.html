@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>sophie's domain</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0"
-    />
-    <meta name="description" content="sophie's domain" />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        color: blue;
-      }
-      #prints {
-        filter: drop-shadow(1px 1px 2px blue);
-        font-family: sans-serif;
-      }
-    </style>
-    <script src="/sophie/dawn/debug.js"></script>
-    <!--     <script src="/sophie/dawn/sketch.js"></script> -->
-    <!--     <link rel="stylesheet" href="/sophie/dawn/style.css" /> -->
-  </head>
-  <body class="dawnify">
-    <input
-      id="range"
-      type="range"
-      min="0"
-      max="100"
-      onchange="dawns[0].make_sun()"
-    />
-    <button onclick="dawns[0]=new Dawn(document.body)">reset time</button>
-    <button onclick="dawns[0].toggle_equation()">toggle equation</button>
-    <div id="prints">
-      <div id="time"></div>
 
-      <div id="debug">test</div>
-    </div>
-  </body>
+<head>
+  <title>sophie's domain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1,user-scalable=0" />
+  <meta name="description" content="sophie's domain" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      color: blue;
+    }
+
+    #prints {
+      filter: drop-shadow(1px 1px 2px blue);
+      font-family: sans-serif;
+    }
+  </style>
+  <script src="debug.js"></script>
+  <!--     <script src="/sophie/dawn/sketch.js"></script> -->
+  <!--     <link rel="stylesheet" href="/sophie/dawn/style.css" /> -->
+</head>
+
+<body class="dawnify">
+  <input id="range" type="range" min="0" max="100" onchange="dawns[0].make_sun()" />
+  <button onclick="dawns[0]=new Dawn(document.body)">reset time</button>
+  <button onclick="dawns[0].toggle_equation()">toggle equation</button>
+  <div id="prints">
+    <div id="time"></div>
+
+    <div id="debug">test</div>
+  </div>
+</body>
+
 </html>

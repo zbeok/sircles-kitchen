@@ -8,7 +8,7 @@ var spng;
 const s = (sk) => {
   sk.setup = () => {
     let img = sk.createImg(
-      "https://kleensco.com/wp-content/uploads/2021/04/GFG331.png",
+      "../assets/spange.png",
       "spange"
     );
     img.style("width", brushSize + "px");
@@ -47,14 +47,14 @@ const s = (sk) => {
         sk.mouseX < 0
           ? 0
           : sk.mouseX > sk.windowWidth
-          ? sk.windowWidth
-          : sk.mouseX;
+            ? sk.windowWidth
+            : sk.mouseX;
       var y =
         sk.mouseY < 0
           ? 0
           : sk.mouseY > sk.windowHeight
-          ? sk.windowHeight
-          : sk.mouseY;
+            ? sk.windowHeight
+            : sk.mouseY;
 
       spng.style("left", x - brushSize / 2 + "px");
       spng.style("top", y - brushSize / 2 + "px");
@@ -65,8 +65,8 @@ const s = (sk) => {
     if (sk.frameCount % 150 == 0) {
       // sk.background(0, 1);
       sk.strokeWeight(0);
-      sk.fill(0,3);
-      sk.rect(0,0,sk.windowWidth,sk.windowHeight);
+      sk.fill(0, 3);
+      sk.rect(0, 0, sk.windowWidth, sk.windowHeight);
     }
   };
   function mark(x, y) {
